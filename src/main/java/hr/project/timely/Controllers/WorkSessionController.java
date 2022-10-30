@@ -22,4 +22,9 @@ public class WorkSessionController {
         this.workSessionService = workSessionService;
     }
 
+    @GetMapping
+    public List<WorkSession> getAllWorkSessions() {
+        return this.workSessionService.getAllWorkSessions();
+    }
+
 }
