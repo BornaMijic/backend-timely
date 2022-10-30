@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface WorkSessionService {
     List<WorkSession> getAllWorkSessions();
     Optional<WorkSession> addWorkSession(WorkSessionCommand workSessionCommand);
+    void deleteWorkSessionById(Long id);
 }

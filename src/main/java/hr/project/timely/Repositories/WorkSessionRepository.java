@@ -9,4 +9,7 @@ public interface WorkSessionRepository extends JpaRepository<WorkSession, Long> 
 
     @Override
     List<WorkSession> findAll();
+
+    @Override
+    void deleteById(Long aLong);
 }

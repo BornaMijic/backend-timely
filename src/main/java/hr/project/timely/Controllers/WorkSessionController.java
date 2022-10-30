@@ -38,4 +38,10 @@ public class WorkSessionController {
 
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(code = HttpStatus.OK, reason = "OK")
+    public void deleteWorkSessionById(@PathVariable Long id) {
+        this.workSessionService.deleteWorkSessionById(id);
+    }
+
 }

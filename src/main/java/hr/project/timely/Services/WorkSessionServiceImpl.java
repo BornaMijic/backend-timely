@@ -29,4 +29,9 @@ public class WorkSessionServiceImpl implements WorkSessionService {
         Optional<WorkSession> workSessionOpt = Optional.of(workSessionRepository.save(workSession));
         return workSessionOpt;
     }
+
+    @Override
+    public void deleteWorkSessionById(Long id) {
+        this.workSessionRepository.deleteById(id);
+    }
 }
