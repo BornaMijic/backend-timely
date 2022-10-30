@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import javax.persistence.*;
 import java.util.Date;
 
-@EntityScan
+@Entity
 @Table(name = "work_sessions")
 public class WorkSession {
 
@@ -20,6 +20,9 @@ public class WorkSession {
 
     @Column(name = "end_date")
     private Date endDate;
+
+    public WorkSession() {
+    }
 
     public WorkSession(String name, Date startDate, Date endDate) {
         this.name = name;

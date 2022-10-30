@@ -1,11 +1,9 @@
 package hr.project.timely.Services;
 
-import hr.project.timely.Models.WorkSession;
+
 import hr.project.timely.Repositories.WorkSessionRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import hr.project.timely.Models.WorkSession;
 
 import java.util.List;
 
@@ -20,6 +18,7 @@ public class WorkSessionServiceImpl implements WorkSessionService {
 
     @Override
     public List<WorkSession> getAllWorkSessions() {
+
         return this.workSessionRepository.findAll();
     }
 }
