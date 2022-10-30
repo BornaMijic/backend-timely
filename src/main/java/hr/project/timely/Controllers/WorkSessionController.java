@@ -30,10 +30,21 @@ public class WorkSessionController {
     @PostMapping
     public ResponseEntity<WorkSession> addWorkSession(@RequestBody @Valid WorkSessionCommand workSessionCommand) {
         Optional<WorkSession> workSessionOptional = this.workSessionService.addWorkSession(workSessionCommand);
-        if(workSessionOptional.isEmpty()) {
+        if (workSessionOptional.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         } else {
-            return  new ResponseEntity<>(workSessionOptional.get(), HttpStatus.OK);
+            return new ResponseEntity<>(workSessionOptional.get(), HttpStatus.OK);
+        }
+
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<WorkSession> addWorkSession(@PathVariable Long id, @RequestBody @Valid WorkSessionCommand workSessionCommand) {
+        Optional<WorkSession> workSessionOptional = this.workSessionService.updateWorkSession(id, workSessionCommand);
+        if (workSessionOptional.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        } else {
+            return new ResponseEntity<>(workSessionOptional.get(), HttpStatus.OK);
         }
 
     }

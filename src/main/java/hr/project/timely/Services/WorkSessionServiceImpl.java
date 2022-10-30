@@ -25,9 +25,14 @@ public class WorkSessionServiceImpl implements WorkSessionService {
 
     @Override
     public Optional<WorkSession> addWorkSession(WorkSessionCommand workSessionCommand) {
-        WorkSession workSession = new WorkSession(workSessionCommand.getName(),workSessionCommand.getStartDate(),workSessionCommand.getEndDate());
-        Optional<WorkSession> workSessionOpt = Optional.of(workSessionRepository.save(workSession));
-        return workSessionOpt;
+        WorkSession workSession = new WorkSession(workSessionCommand.getName(), workSessionCommand.getStartDate(), workSessionCommand.getEndDate());
+        return Optional.of(workSessionRepository.save(workSession));
+    }
+
+    @Override
+    public Optional<WorkSession> updateWorkSession(Long id, WorkSessionCommand workSessionCommand) {
+        WorkSession workSession = new WorkSession(id, workSessionCommand.getName(), workSessionCommand.getStartDate(), workSessionCommand.getEndDate());
+        return Optional.of(workSessionRepository.save(workSession));
     }
 
     @Override
