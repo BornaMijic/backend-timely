@@ -1,6 +1,8 @@
 package hr.project.timely.Models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
